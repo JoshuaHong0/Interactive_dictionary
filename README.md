@@ -1,5 +1,5 @@
 # Interactive_dictionary
-This is a simple python project that implements an interactive dictionary
+This simple python project implements an interactive dictionary
 
 
 ## Features
