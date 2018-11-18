@@ -11,17 +11,19 @@
 import json
 from difflib import get_close_matches
 
+# Import data
 data = json.load(open("data.json"))
 
+# Translate function
 def translate(key_word):
     if key_word in data:
         return data[key_word]
-    elif key_word.title() in data:
+    elif key_word.title() in data:        # Handle titles
         return data[key_word.title()]
-    elif key_word.upper() in data:
+    elif key_word.upper() in data:        # Handle acronym
         return data[key_word.upper()]
     elif get_close_matches(key_word, data.keys()):
-        sw = get_close_matches(key_word,data.keys())[0]
+        sw = get_close_matches(key_word,data.keys())[0]    # find the word with highest similarity
         yn = input("Do you mean %s instead? Enter Y if yes, or N if no: " % sw).lower()
         while True:
             if yn == "y":
