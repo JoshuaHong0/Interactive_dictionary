@@ -23,7 +23,7 @@ def translate(key_word):
     elif key_word.upper() in data:        # Handle acronym
         return data[key_word.upper()]
     elif get_close_matches(key_word, data.keys()):
-        sw = get_close_matches(key_word,data.keys())[0]    # find the word with highest similarity
+        sw = get_close_matches(key_word,data.keys())[0]    # Find the word with highest similarity
         yn = input("Do you mean %s instead? Enter Y if yes, or N if no: " % sw).lower()
         while True:
             if yn == "y":
